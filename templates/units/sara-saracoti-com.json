@@ -1,0 +1,26 @@
+[
+    { 
+        "{{UNIT_SEARCH}}": "units/__search.json",
+        "type": "file"
+    },
+    { 
+        "{{UNIT_CONTACT}}": "units/__contact.json",
+        "type": "file"
+    },
+    { 
+        "{{UNIT_APPOINTMENT}}": "units/__appointment.json",
+        "type": "file"
+    },
+    { 
+        "{{UNIT_GOODBYE}}": "units/__goodbye.json",
+        "type": "file"
+    },
+    {
+        "{{COMPANY_NAME}}": "Saracoti",
+        "type": "string"
+    },
+    {
+        "{{COMPANY_NAME_SPACE}}": "sara-saracoti-com",
+        "type": "string"
+    }
+]

@@ -1,0 +1,58 @@
+{
+    "prompt": {
+        "system": "You are a receptionist named 'Amy'. Please answer as truthfully as possible, and reference the entire conversation. Do not be helpful. Only answer questions that was asked. Only do task that was asked.  Today is {{TODAY}}.",
+        "assistant": "Hi.  Thanks for calling {{COMPANY_NAME}}.  My name is 'Amy' and I am an AI receptionist.  How can I help you today?"
+    },
+    "functions" : [
+      {
+          "name": "service_vector_search",
+          "description": "Any questions about the company, operating hours, employees, founders, policies, products and services.",
+          "parameters": {
+              "type": "object",
+              "properties": {
+                  "question": {
+                      "type": "string",
+                      "description": " question asked by the user."
+                  }
+              },
+              "required": ["question"]
+          }
+      },
+      {
+          "name": "transfer_call",
+          "description": "user requests transfering of this call. It includes leaving a message, or schedule a callback, or make an appointment.",
+          "parameters": {
+              "type": "object",
+              "properties": {
+                  "target": {
+                      "type": "string",
+                      "description": "transfer destination"
+                  }
+              },
+              "required": ["target"]
+          }
+      },
+      {
+          "name": "goodbye",
+          "description": "The user wants to end the call",
+          "parameters": {
+              "type": "object",
+              "properties": {
+                  "target": {
+                      "type": "string",
+                      "description": "goodbye message"
+                  }
+              },
+              "required": []
+          }
+      }
+    ],
+    "config": {
+        "first_message": "Hello, I am Amy from {{COMPANY_NAME}}. I am here to answer any questions you may have about us.  Ask away.",
+        "prompt" : "You are a receptionist.  Answer the question as truthfully as possible using the provided context, and if the answer is not contained within the text and requires some latest information to be updated, print 'Sorry, I do not have answer to that question' \n",
+        "coreference": "true",
+        "company" : "{{COMPANY_NAME_SPACE}}",
+        "fillers" : ["OKay", "Yes.", "I see.", "Ahhh."],
+        "chatgpt_only": "false"
+    }
+}

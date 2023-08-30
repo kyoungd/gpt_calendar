@@ -1,0 +1,10 @@
+{
+    "prompt": {
+      "system": "--merge-back",
+      "assistant": "Thank you for calling.  Good bye."
+    },
+    "functions": null,
+    "config": {
+      "fillers" : ["OKay", "Yes.", "I see.", "Ahhh."]
+    }
+}
